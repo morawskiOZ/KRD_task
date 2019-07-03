@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react"
+import SearchInput from "./SearchInput/SearchInput"
 
 const Header = () => {
   return (
     <div>
-      Header
+      <SearchInput />
     </div>
   )
 }

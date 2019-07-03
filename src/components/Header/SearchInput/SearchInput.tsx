@@ -2,7 +2,7 @@ import React from "react"
 
 const SearchInput = () => {
   return (
-    <form>
+    <form className="SearchInput-form">
       <label>
         Podaj numer sprawy, nazwę lub NIP dłużnika
         <input type="text" name="search_Input" />
