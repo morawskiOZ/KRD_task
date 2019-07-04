@@ -6,7 +6,7 @@ const SearchInput = () => {
   const [query, setQuery] = useState<number | string>("")
   const [search, setSearch] = useState<number | string | null>(null)
   
-  const {error, loading, data} = useAxios({url: "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts", method: "POST", data: {Number: query} }, search )
+  const {error, loading, data} = useAxios({url: "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts", method: "POST", data: {Number: query, Name: query, NIP: query} }, search )
   
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void =>
     setQuery(e.currentTarget.value)
