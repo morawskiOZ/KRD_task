@@ -1,10 +1,7 @@
 import React, { useContext } from "react"
-import useAxios from "../../../hooks/useAxios"
-import Axios from "axios"
-import { METHODS } from "http"
-import { ENGINE_METHOD_ECDSA } from "constants"
 import { AppContext } from "../../../context/context"
 import { Actions } from "../../../globalState/actions"
+import useAxios from "../../../hooks/useAxios"
 import "./Counter.scss"
 
 const Counter = () => {
