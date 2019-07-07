@@ -1,19 +1,32 @@
-import React, { ChangeEvent, useState } from "react"
+import React, { ChangeEvent, useContext, useState } from "react"
+import { AppContext } from "../../../context/context"
+import { Actions } from "../../../globalState/actions"
+import useAxios from "../../../hooks/useAxios"
 import "./SearchInput.scss"
-import useAxios from "../../../hooks/useAxios";
 
 const SearchInput = () => {
   const [query, setQuery] = useState<number | string>("")
   const [search, setSearch] = useState<number | string | null>(null)
-  
-  const {error, loading, data} = useAxios({url: "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts", method: "POST", data: {Number: query, Name: query, NIP: query} }, search )
-  
+
+  const { state, dispatch } = useContext(AppContext)
+
+  const { error, loading, data } = useAxios(
+    {
+      url:
+        "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts",
+      method: "POST",
+      data: { Number: query, Name: query, NIP: query }
+    },
+    search,
+    dispatch,
+    Actions.SAVE_SEARCH_DATA
+  )
+
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void =>
     setQuery(e.currentTarget.value)
   const handleOnSubmit = (e: ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
     setSearch(query)
-    
   }
   return (
     <form className="SearchInput-form" onSubmit={handleOnSubmit}>

@@ -1,27 +1,27 @@
-import React, { useContext, useReducer } from "react"
+import React, { useMemo, useReducer } from "react"
+import { reducer } from "../globalState/reducer"
 
-let reducer = (state, action) => {
-  switch (action.type) {
-    case "START_LOADING":
-      return { ...state, isLoading: true }
-    case "FINISH_LOADING":
-      return { ...state, isLoading: false }
-    default:
-      return
-  }
+const initialState: { state: any; dispatch?: any; searchData?: {} } = {
+  state: { isLoading: false }
 }
+const AppContext = React.createContext(initialState)
 
-const initialState = { isLoading: false }
-const LoadingContext = React.createContext(initialState)
-
-const LoadingProvider = props => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
+const AppContextProvider = props => {
+  const [state, dispatch]: [any, any] = useReducer<any>(
+    reducer,
+    initialState as any
+  )
+  const contextValue: {
+    state: { isLoading: boolean }
+    dispatch: any
+  } = useMemo(() => {
+    return { state, dispatch }
+  }, [state, dispatch])
   return (
-    <LoadingContext.Provider value={{ state, dispatch } as any}>
+    <AppContext.Provider value={contextValue}>
       {props.children}
-    </LoadingContext.Provider>
+    </AppContext.Provider>
   )
 }
 
-export default { LoadingContext, LoadingProvider }
+export { AppContext, AppContextProvider }
