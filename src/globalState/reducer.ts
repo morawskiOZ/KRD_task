@@ -8,6 +8,8 @@ export const reducer = (state, action) => {
       return { ...state, isLoading: false }
     case Actions.SAVE_SEARCH_DATA:
       return { ...state, searchData: action.data }
+    case Actions.SAVE_COUNTER_DATA:
+      return { ...state, counterData: action.data }
     default:
       return
   }
