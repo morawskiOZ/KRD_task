@@ -21,7 +21,6 @@ const useAxios = (
       dispatch && dispatch({ type: Actions.START_LOADING })
       try {
         const response = await axios(request)
-        debugger
         if (response.statusText === "OK") {
           const body = response.data
           setData(body)
