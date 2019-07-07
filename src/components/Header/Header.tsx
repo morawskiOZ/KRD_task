@@ -1,13 +1,15 @@
 import React, { useContext } from "react"
 import { AppContext } from "../../context/context"
+import Counter from "./Counter/Counter"
 import "./Header.scss"
 import SearchInput from "./SearchInput/SearchInput"
 
 const Header = () => {
   const { state, dispatch } = useContext(AppContext)
   return (
-    <div className="Header">
+    <div className="Header AppFrame-content">
       <SearchInput />
+      <Counter />
     </div>
   )
 }

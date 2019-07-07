@@ -13,9 +13,6 @@ const useAxios = (
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    if (!dependency) {
-      return
-    }
     const req = async () => {
       setLoading(true)
       dispatch && dispatch({ type: Actions.START_LOADING })

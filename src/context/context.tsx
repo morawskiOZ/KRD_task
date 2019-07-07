@@ -1,10 +1,14 @@
 import React, { useMemo, useReducer } from "react"
 import { reducer } from "../globalState/reducer"
 
-const initialState: { state: any; dispatch?: any; searchData?: {} } = {
-  state: { isLoading: false }
+const initialState: { isLoading?: boolean; searchData?: any } = {
+  isLoading: false
 }
-const AppContext = React.createContext(initialState)
+
+const AppContext = React.createContext({
+  state: initialState,
+  dispatch: undefined
+})
 
 const AppContextProvider = props => {
   const [state, dispatch]: [any, any] = useReducer<any>(
