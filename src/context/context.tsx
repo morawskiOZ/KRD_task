@@ -1,7 +1,8 @@
 import React, { useMemo, useReducer } from "react"
 import { reducer } from "../globalState/reducer"
+import { GlobalState } from "../globalState/types"
 
-const initialState: { isLoading?: boolean; searchData?: any } = {
+const initialState: GlobalState = {
   isLoading: false
 }
 
@@ -11,12 +12,12 @@ const AppContext = React.createContext({
 })
 
 const AppContextProvider = props => {
-  const [state, dispatch]: [any, any] = useReducer<any>(
+  const [state, dispatch]: [any, any] = useReducer(
     reducer,
-    initialState as any
+    initialState as GlobalState
   )
   const contextValue: {
-    state: { isLoading: boolean }
+    state: GlobalState
     dispatch: any
   } = useMemo(() => {
     return { state, dispatch }

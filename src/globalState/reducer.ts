@@ -10,6 +10,8 @@ export const reducer = (state, action) => {
       return { ...state, searchData: action.data }
     case Actions.SAVE_COUNTER_DATA:
       return { ...state, counterData: action.data }
+    case Actions.SAVE_TOP_DEBTOR_DATA:
+      return { ...state, topDebtor: action.data }
     default:
       return
   }
