@@ -10,5 +10,6 @@ body {
   grid-template-columns: 1fr minmax(80vw, 1000px) 1fr;
   &-content {
     grid-column: 2;
+    grid-gap: 10px;
   }
 }
