@@ -1,0 +1,9 @@
+.Loader {
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  &-filler {
+    background: red;
+    height: 100%;
+  }
+}
