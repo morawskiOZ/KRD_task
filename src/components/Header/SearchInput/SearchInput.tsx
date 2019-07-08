@@ -30,7 +30,7 @@ const SearchInput: React.FC = () => {
     if (query && query.toString().length < 3) {
       dispatch({
         type: Actions.SET_ERROR,
-        error: "Proszę wprowadź co najmniej 3 znaki"
+        error: "Proszę wprowadź co najmniej 3 znaki."
       })
     } else {
       setSearch(query)

@@ -20,3 +20,17 @@
 
   }
 }
+
+@media (max-width: 600px) {
+  .Counter {
+    &-title {
+      font-size: 11px;
+    }
+    &-number {
+      font-size: 20px;
+      letter-spacing: 0.01rem;
+
+  
+    }
+  }
+}

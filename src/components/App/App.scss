@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .AppFrame {
@@ -11,5 +11,11 @@ body {
   &-content {
     grid-column: 2;
     grid-gap: 10px;
+  }
+  &-error {
+    margin-left: 5px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: red;
   }
 }
