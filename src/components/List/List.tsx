@@ -19,7 +19,7 @@ const fakeData: Debt = {
 
 const List: React.FC = () => {
   const {
-    state: { isLoading, searchData, topDebtor },
+    state: { isLoading, searchData, topDebtor, activeItemId },
     dispatch
   } = useContext(AppContext)
 
@@ -32,6 +32,19 @@ const List: React.FC = () => {
     dispatch,
     Actions.SAVE_TOP_DEBTOR_DATA
   )
+
+  const dataToShow: Debt[] | undefined = searchData || topDebtor
+
+  if (isLoading) {
+    return <p className="AppFrame-content">Loading...</p>
+  }
+  if (dataToShow && !dataToShow.length) {
+    return (
+      <p className="AppFrame-content">
+        Nie znaleziono żadnych wyników spełniających kryteria.
+      </p>
+    )
+  }
   return (
     <>
       <div className="List AppFrame-content">
@@ -43,9 +56,14 @@ const List: React.FC = () => {
           </span>
         </div>
         <div className="List-items">
-          <ListItem data={fakeData} active={false} />
-          <ListItem data={fakeData} active={true} />
-          <ListItem data={fakeData} active={false} />
+          {dataToShow &&
+            dataToShow.map((elementData: Debt) => (
+              <ListItem
+                data={elementData}
+                active={elementData.Id === activeItemId}
+                key={elementData.Id}
+              />
+            ))}
         </div>
       </div>
     </>

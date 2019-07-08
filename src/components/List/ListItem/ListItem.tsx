@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { AppContext } from "../../../context/context"
+import { Actions } from "../../../globalState/actions"
 import { Debt } from "../../../globalState/types"
 import "./ListItem.scss"
-import { Actions } from "../../../globalState/actions";
 
-interface ListItemProps {
+export interface ListItemProps {
   data: Debt
   active: boolean
 }
@@ -40,9 +40,13 @@ const ListItem = ({
       </div>
     </>
   )
-    const clickHandler = (event) => {
-      dispatch({type: Actions.SET_ACTIVE_ITEM, id: Id})
+  const clickHandler = event => {
+    if (active) {
+      dispatch({ type: Actions.SET_ACTIVE_ITEM, id: null })
+    } else {
+      dispatch({ type: Actions.SET_ACTIVE_ITEM, id: Id })
     }
+  }
   return (
     <div className={`ListItem ${active ? "ListItem--active" : ""}`}>
       <div className="ListItem-name">
@@ -57,7 +61,9 @@ const ListItem = ({
         {active && <h6 className="ListItem-cell--heading">Kwota zadłużenia</h6>}
         {Value}
       </div>
-      <button className="ListItem-button" onClick={clickHandler}>{active ? "Mniej" : "Więcej"}</button>
+      <button className="ListItem-button" onClick={clickHandler}>
+        {active ? "Mniej" : "Więcej"}
+      </button>
       {active && activeItemElements}
     </div>
   )
