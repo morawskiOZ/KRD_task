@@ -43,7 +43,7 @@ const Loader = (): ReactElement => {
 
   return (
     <div className="Loader AppFrame-content">
-      <div className="Loader-filler" style={{ width: `${percentage}%` }} />
+      {isLoading && (<div className="Loader-filler" style={{ width: `${percentage}%` }} />)}
     </div>
   )
 }
