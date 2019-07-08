@@ -1,12 +1,37 @@
 .ListItem {
   display: grid;
   grid-template-columns: 6fr 2fr 2fr 3fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 5px;
+  color: #003054;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
   &--active {
+    background-color: #eaeaea;
   }
   &-address {
     grid-column: 1;
   }
   &-button {
     grid-column: 5;
+  }
+  &-cell {
+    &--heading {
+      margin: 0;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #4d4b4b;
+      letter-spacing: 0.05rem;
+    }
+    &--smallFont {
+      font-size: 14px;
+    }
+  }
+  &-button {
+    text-transform: uppercase;
+    color: red;
+    font-size: 12px;
   }
 }

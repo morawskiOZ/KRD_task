@@ -13,19 +13,43 @@ const ListItem = ({
 }: ListItemProps) => {
   const activeItemElements = (
     <>
-      <span className="ListItem-address">{Address}</span>
-      <span className="ListItem-documentType">{DocumentType}</span>
-      <span className="ListItem-price">{Price}</span>
-      <span className="ListItem-number">{Number}</span>
+      <div className="ListItem-cell ListItem-address ListItem-cell--smallFont">
+        <h6 className="ListItem-cell--heading">Adres</h6>
+        {Address}
+      </div>
+      <div className="ListItem-documentType ListItem-cell--smallFont">
+        <h6 className="ListItem-cell--heading">
+          Rodzaj/typ dokuemntu stanowiący <br />
+          podstawę dla wierzytelności
+        </h6>
+        {DocumentType}
+      </div>
+      <div className="ListItem-price ListItem-cell--smallFont">
+        <h6 className="ListItem-cell--heading">Cena zadłużenia</h6>
+        {Price}
+      </div>
+      <div className="ListItem-number ListItem-cell--smallFont">
+        <h6 className="ListItem-cell--heading">Numer</h6>
+        {Number}
+      </div>
     </>
   )
 
   return (
     <div className={`ListItem ${active ? "ListItem--active" : ""}`}>
-      <span className="ListItem-name">{Name}</span>
-      <span className="ListItem-NIP">{NIP}</span>
-      <span className="ListItem-value">{Value}</span>
-      <span className="ListItem-button">{active ? "Mniej" : "Więcej"}</span>
+      <div className="ListItem-name">
+        {active && <h6 className="ListItem-cell--heading">Dłużnik</h6>}
+        {Name}
+      </div>
+      <div className="ListItem-NIP">
+        {active && <h6 className="ListItem-cell--heading">NIP</h6>}
+        {NIP}
+      </div>
+      <div className="ListItem-value">
+        {active && <h6 className="ListItem-cell--heading">Kwota zadłużenia</h6>}
+        {Value}
+      </div>
+      <div className="ListItem-button">{active ? "Mniej" : "Więcej"}</div>
       {active && activeItemElements}
     </div>
   )

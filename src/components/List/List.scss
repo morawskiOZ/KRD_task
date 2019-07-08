@@ -4,5 +4,18 @@
     grid-auto-flow: column;
     grid-template-columns: 6fr 2fr 2fr 3fr 1fr;
     border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+    padding: 0 20px 0 20px;
+    &--heading {
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgb(190, 190, 190);
+      padding: 15px 0 10px 0;
+    }
+  }
+  &-items {
+    display: grid;
+    grid-gap: 20px;
   }
 }

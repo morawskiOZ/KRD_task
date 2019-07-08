@@ -36,11 +36,13 @@ const List: React.FC = () => {
     <>
       <div className="List AppFrame-content">
         <div className="List-title">
-          <span className="List-name">Dłużnik</span>
-          <span className="List-NIP">NIP</span>
-          <span className="List-value">Kwota zadłużenia</span>
+          <span className="List-title--heading List-name">Dłużnik</span>
+          <span className="List-title--heading List-NIP">NIP</span>
+          <span className="List-title--heading List-value">
+            Kwota zadłużenia
+          </span>
         </div>
-        <div className="Item-items">
+        <div className="List-items">
           <ListItem data={fakeData} active={false} />
           <ListItem data={fakeData} active={true} />
           <ListItem data={fakeData} active={false} />
