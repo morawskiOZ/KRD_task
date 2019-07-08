@@ -56,3 +56,54 @@
     font-size: 12px;
   }
 }
+
+
+@media (max-width: 900px) {
+  .ListItem {
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    color: #003054;
+    font-size: 14px;
+    &-cell {
+      &--heading {
+        font-size: 8px;
+        font-weight: 500;
+        color: #4d4b4b;
+        letter-spacing: 0.05rem;
+      }
+      &--smallFont {
+        font-size: 12px;
+      }
+    }
+    &-button {
+      text-transform: uppercase;
+      color: red;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .ListItem {
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    color: #003054;
+    font-size: 12px;
+    &-cell {
+      &--heading {
+        font-size: 8px;
+        font-weight: 500;
+        color: #4d4b4b;
+        letter-spacing: 0.05rem;
+      }
+      &--smallFont {
+        font-size: 11px;
+      }
+    }
+    &-button {
+      text-transform: uppercase;
+      color: red;
+      font-size: 11px;
+    }
+  }
+}

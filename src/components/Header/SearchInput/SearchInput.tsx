@@ -28,10 +28,9 @@ const SearchInput: React.FC = () => {
   const handleOnSubmit = (e: ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (query && query.toString().length < 3) {
-      debugger
       dispatch({
         type: Actions.SET_ERROR,
-        error: "Proszę wprowadź co najmniej 3 znaki"
+        error: "Proszę wprowadź co najmniej 3 znaki."
       })
     } else {
       setSearch(query)

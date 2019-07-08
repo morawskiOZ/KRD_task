@@ -19,7 +19,7 @@
   &-submit {
     height: 100%;
     padding: 0 46px;
-    background-color: #e64429;
+    background-color: red;
     color: white;
     text-transform: uppercase;
     -webkit-appearance: none;
@@ -27,6 +27,17 @@
     margin: 0;
     font-weight: 700;
     letter-spacing: -0.03rem;
+    background-position: center;
+    transition: background 0.8s;
+    &:hover {
+      background: rgb(253, 39, 39) radial-gradient(circle, transparent 1%, #9c2c18 1%)
+        center/15000%;
+    }
+    &:active {
+      background-color: hsl(10, 70%, 40%);
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
   &-label {
     color: white;
@@ -35,5 +46,28 @@
     letter-spacing: -0.03rem;
     font-size: 14px;
     margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .SearchInput {
+    &-inputContainer {
+      height: 30px;
+    }
+    &-input {
+      width: 200px;
+    }
+    &-submit {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .SearchInput {
+    &-label {
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
   }
 }
