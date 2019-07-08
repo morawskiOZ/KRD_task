@@ -12,7 +12,7 @@ const List: React.FC = () => {
     dispatch
   } = useContext(AppContext)
 
-  const { loading, data } = useAxios(
+  useAxios(
     {
       url: "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts",
       method: "GET"

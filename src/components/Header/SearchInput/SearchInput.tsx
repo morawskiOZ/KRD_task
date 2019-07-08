@@ -8,9 +8,9 @@ const SearchInput: React.FC = () => {
   const [query, setQuery] = useState<number | string>("")
   const [search, setSearch] = useState<number | string | null>(null)
 
-  const { state, dispatch } = useContext(AppContext)
+  const { dispatch } = useContext(AppContext)
 
-  const { error, loading, data } = useAxios(
+  useAxios(
     {
       url:
         "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts",
@@ -19,14 +19,24 @@ const SearchInput: React.FC = () => {
     },
     search,
     dispatch,
-    Actions.SAVE_SEARCH_DATA
+    Actions.SAVE_SEARCH_DATA,
+    query
   )
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>): void =>
     setQuery(e.currentTarget.value)
   const handleOnSubmit = (e: ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    setSearch(query)
+    if (query && query.toString().length < 3) {
+      debugger
+      dispatch({
+        type: Actions.SET_ERROR,
+        error: "Proszę wprowadź co najmniej 3 znaki"
+      })
+    } else {
+      setSearch(query)
+      dispatch({ type: Actions.SET_ERROR, error: null })
+    }
   }
   return (
     <form className="SearchInput-form" onSubmit={handleOnSubmit}>
