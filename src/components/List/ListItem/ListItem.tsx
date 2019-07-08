@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, ChangeEvent, MouseEvent, ReactElement } from "react"
 import { AppContext } from "../../../context/context"
 import { Actions } from "../../../globalState/actions"
 import { Debt } from "../../../globalState/types"
@@ -12,7 +12,7 @@ export interface ListItemProps {
 const ListItem = ({
   data: { Address, DocumentType, Id, NIP, Name, Number, Price, Value },
   active
-}: ListItemProps) => {
+}: ListItemProps): ReactElement => {
   const {
     state: { isLoading, searchData, topDebtor },
     dispatch
@@ -40,7 +40,7 @@ const ListItem = ({
       </div>
     </>
   )
-  const clickHandler = event => {
+  const clickHandler = (event:  MouseEvent<HTMLButtonElement>): void => {
     if (active) {
       dispatch({ type: Actions.SET_ACTIVE_ITEM, id: null })
     } else {

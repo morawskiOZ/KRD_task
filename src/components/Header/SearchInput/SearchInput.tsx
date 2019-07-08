@@ -4,7 +4,7 @@ import { Actions } from "../../../globalState/actions"
 import useAxios from "../../../hooks/useAxios"
 import "./SearchInput.scss"
 
-const SearchInput = () => {
+const SearchInput: React.FC = () => {
   const [query, setQuery] = useState<number | string>("")
   const [search, setSearch] = useState<number | string | null>(null)
 

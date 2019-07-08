@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
+import React, { useContext, ReactElement } from "react"
 import { AppContext } from "../../../context/context"
 import { Actions } from "../../../globalState/actions"
 import useAxios from "../../../hooks/useAxios"
 import "./Counter.scss"
 
-const Counter = () => {
+const Counter = (): ReactElement => {
   const { state, dispatch } = useContext(AppContext)
 
   const { error, loading, data } = useAxios(

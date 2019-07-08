@@ -1,10 +1,10 @@
-import React, { useContext } from "react"
+import React, { useContext, ReactElement } from "react"
 import { AppContext } from "../../context/context"
 import Counter from "./Counter/Counter"
 import "./Header.scss"
 import SearchInput from "./SearchInput/SearchInput"
 
-const Header = () => {
+const Header = (): ReactElement => {
   const { state, dispatch } = useContext(AppContext)
   return (
     <div className="Header AppFrame-content">
