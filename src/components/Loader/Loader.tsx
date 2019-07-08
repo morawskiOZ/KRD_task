@@ -28,7 +28,7 @@ const Loader = (): ReactElement => {
     loadingInterval = setInterval(increasePercentage, 300)
   }
 
-  useEffect( () => {
+  useEffect(() => {
     if (!isLoading) {
       setPercentage(0)
       clearInterval(loadingInterval)
@@ -43,7 +43,9 @@ const Loader = (): ReactElement => {
 
   return (
     <div className="Loader AppFrame-content">
-      {isLoading && (<div className="Loader-filler" style={{ width: `${percentage}%` }} />)}
+      {isLoading && (
+        <div className="Loader-filler" style={{ width: `${percentage}%` }} />
+      )}
     </div>
   )
 }
