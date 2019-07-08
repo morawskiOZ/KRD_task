@@ -4,6 +4,7 @@ export interface GlobalState {
   topDebtor?: Debt[]
   caseCount?: number
   activeItemId?: number
+  error?: string
 }
 
 export interface Debt {

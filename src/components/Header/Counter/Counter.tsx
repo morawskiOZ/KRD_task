@@ -5,9 +5,9 @@ import useAxios from "../../../hooks/useAxios"
 import "./Counter.scss"
 
 const Counter = (): ReactElement => {
-  const { state, dispatch } = useContext(AppContext)
+  const { dispatch } = useContext(AppContext)
 
-  const { error, loading, data } = useAxios(
+  const { loading, data } = useAxios(
     {
       url:
         "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetDebtsCount",

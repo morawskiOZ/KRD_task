@@ -30,6 +30,11 @@
     &:hover {
       text-decoration: underline;
     }
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    
+    
   }
   &-cell {
     &--heading {

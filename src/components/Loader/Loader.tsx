@@ -6,8 +6,7 @@ const Loader = (): ReactElement => {
   const [percentage, setPercentage] = useState<number>(0)
 
   const {
-    state: { isLoading },
-    dispatch
+    state: { isLoading }
   } = useContext(AppContext)
 
   let loadingInterval: NodeJS.Timer
