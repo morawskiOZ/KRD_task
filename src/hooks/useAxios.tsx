@@ -14,7 +14,6 @@ const useAxios = (
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    debugger
     if (query === "") {
       return
     }
