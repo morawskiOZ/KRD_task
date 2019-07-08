@@ -1,15 +1,22 @@
 .Counter {
   margin-right: 20px;
   color: white;
+  display: grid;
   &-title {
     margin: 0;
     text-transform: uppercase;
     color: red;
     font-weight: 700;
+    letter-spacing: -0.04rem;
+    font-size: 14px;
+    word-spacing: -0.02rem;
   }
   &-number {
     margin: 0;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 700;
+    letter-spacing: 0.2rem;
+    justify-self: right;
+
   }
 }
