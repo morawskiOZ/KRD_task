@@ -1,0 +1,12 @@
+.ListItem {
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr 3fr 1fr;
+  &--active {
+  }
+  &-address {
+    grid-column: 1;
+  }
+  &-button {
+    grid-column: 5;
+  }
+}

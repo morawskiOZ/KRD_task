@@ -1,8 +1,17 @@
-import { ListItemProp } from "../components/List/ListItem/ListItem";
-
 export interface GlobalState {
   isLoading?: boolean
-  searchData?: ListItemProp[]
-  topDebtor?: ListItemProp[]
+  searchData?: Debt[]
+  topDebtor?: Debt[]
   caseCount?: number
+}
+
+export interface Debt {
+  Address: string
+  DocumentType: string
+  Id: number
+  NIP: string
+  Name: string
+  Number: string
+  Price: number
+  Value: number
 }
