@@ -3,6 +3,7 @@ export interface GlobalState {
   searchData?: Debt[]
   topDebtor?: Debt[]
   caseCount?: number
+  activeItemId?: number
 }
 
 export interface Debt {

@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
+import { AppContext } from "../../../context/context"
 import { Debt } from "../../../globalState/types"
 import "./ListItem.scss"
+import { Actions } from "../../../globalState/actions";
 
 interface ListItemProps {
   data: Debt
@@ -11,6 +13,10 @@ const ListItem = ({
   data: { Address, DocumentType, Id, NIP, Name, Number, Price, Value },
   active
 }: ListItemProps) => {
+  const {
+    state: { isLoading, searchData, topDebtor },
+    dispatch
+  } = useContext(AppContext)
   const activeItemElements = (
     <>
       <div className="ListItem-cell ListItem-address ListItem-cell--smallFont">
@@ -34,7 +40,9 @@ const ListItem = ({
       </div>
     </>
   )
-
+    const clickHandler = (event) => {
+      dispatch({type: Actions.SET_ACTIVE_ITEM, id: Id})
+    }
   return (
     <div className={`ListItem ${active ? "ListItem--active" : ""}`}>
       <div className="ListItem-name">
@@ -49,7 +57,7 @@ const ListItem = ({
         {active && <h6 className="ListItem-cell--heading">Kwota zadłużenia</h6>}
         {Value}
       </div>
-      <div className="ListItem-button">{active ? "Mniej" : "Więcej"}</div>
+      <button className="ListItem-button" onClick={clickHandler}>{active ? "Mniej" : "Więcej"}</button>
       {active && activeItemElements}
     </div>
   )

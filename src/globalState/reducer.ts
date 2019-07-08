@@ -12,6 +12,8 @@ export const reducer = (state, action) => {
       return { ...state, caseCount: action.data }
     case Actions.SAVE_TOP_DEBTOR_DATA:
       return { ...state, topDebtor: action.data }
+      case Actions.SET_ACTIVE_ITEM:
+        return { ...state, activeItemId: action.id }
     default:
       return
   }

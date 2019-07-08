@@ -4,16 +4,31 @@
   grid-row-gap: 20px;
   grid-column-gap: 5px;
   color: #003054;
-  padding: 10px 20px 10px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 18px;
+  align-items: center;
   &--active {
     background-color: #eaeaea;
+    padding: 10px 20px 10px 20px;
   }
   &-address {
     grid-column: 1;
   }
   &-button {
     grid-column: 5;
+    background: transparent;
+    border: 0;
+    &:active {
+      outline: none;
+      background-color: gainsboro;
+      border-radius: 6px;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &-cell {
     &--heading {

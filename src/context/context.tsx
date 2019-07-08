@@ -8,7 +8,7 @@ const initialState: GlobalState = {
 
 const AppContext = React.createContext({
   state: initialState,
-  dispatch: undefined
+  dispatch: undefined as any
 })
 
 const AppContextProvider = props => {
