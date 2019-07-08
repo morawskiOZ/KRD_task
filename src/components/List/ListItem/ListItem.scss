@@ -1,0 +1,53 @@
+.ListItem {
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr 3fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  color: #003054;
+  padding: 4px 20px 4px 20px;
+  font-size: 18px;
+  align-items: center;
+  &--active {
+    background-color: #eaeaea;
+    padding: 10px 20px 10px 20px;
+  }
+  &-address {
+    grid-column: 1;
+  }
+  &-button {
+    grid-column: 5;
+    background: transparent;
+    border: 0;
+    padding: 5px;
+    &:active {
+      outline: none;
+      background-color: gainsboro;
+      border-radius: 6px;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &-cell {
+    &--heading {
+      margin: 0;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #4d4b4b;
+      letter-spacing: 0.05rem;
+    }
+    &--smallFont {
+      font-size: 14px;
+    }
+  }
+  &-button {
+    text-transform: uppercase;
+    color: red;
+    font-size: 12px;
+  }
+}
