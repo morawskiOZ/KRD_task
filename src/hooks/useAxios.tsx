@@ -24,9 +24,12 @@ const useAxios = (
           dispatch && action && dispatch({ type: action, data: body })
         } else {
           setError(response.statusText)
+          dispatch &&
+            dispatch({ type: Actions.SET_ERROR, error: response.statusText })
         }
-      } catch (e) {
-        setError(e)
+      } catch (error) {
+        setError(error.statusText)
+        dispatch && dispatch({ type: Actions.SET_ERROR, error: error.statusText })
       }
       setLoading(false)
       dispatch && dispatch({ type: Actions.FINISH_LOADING })

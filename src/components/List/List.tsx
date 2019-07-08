@@ -8,11 +8,11 @@ import ListItem from "./ListItem/ListItem"
 
 const List: React.FC = () => {
   const {
-    state: { isLoading, searchData, topDebtor, activeItemId },
+    state: { isLoading, searchData, topDebtor, activeItemId, error },
     dispatch
   } = useContext(AppContext)
 
-  const { error, loading, data } = useAxios(
+  const { loading, data } = useAxios(
     {
       url: "http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts",
       method: "GET"
@@ -26,6 +26,9 @@ const List: React.FC = () => {
 
   if (isLoading) {
     return <p className="AppFrame-content">Loading...</p>
+  }
+  if (error) {
+    return <p className="AppFrame-content AppFrame-error">{error}</p>
   }
   if (dataToShow && !dataToShow.length) {
     return (
