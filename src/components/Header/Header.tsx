@@ -5,12 +5,14 @@ import "./Header.scss"
 import SearchInput from "./SearchInput/SearchInput"
 
 const Header = (): ReactElement => {
-  useContext(AppContext)
   return (
+    <>
+    <div className="Header-backGround"></div>
     <div className="Header AppFrame-content">
       <SearchInput />
       <Counter />
     </div>
+    </>
   )
 }
 

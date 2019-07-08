@@ -1,8 +1,18 @@
+@import "../App/variables";
+
 .Header {
   display: grid;
-  height: 160px;
+  height: var(--header-height);
   background-color: #003054;
   grid-auto-flow: column;
   align-items: center;
   justify-content: space-between;
+  grid-row: 1;
+
+  &-backGround {
+    background-color: #003054;
+    grid-row: 1;
+    height: var(--header-height);
+    grid-column: -1/1;
+  }
 }
