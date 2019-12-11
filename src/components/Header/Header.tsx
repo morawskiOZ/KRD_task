@@ -1,5 +1,4 @@
-import React, { useContext, ReactElement } from "react"
-import { AppContext } from "../../context/context"
+import React, { ReactElement } from "react"
 import Counter from "./Counter/Counter"
 import "./Header.scss"
 import SearchInput from "./SearchInput/SearchInput"
@@ -7,11 +6,11 @@ import SearchInput from "./SearchInput/SearchInput"
 const Header = (): ReactElement => {
   return (
     <>
-    <div className="Header-backGround"></div>
-    <div className="Header AppFrame-content">
-      <SearchInput />
-      <Counter />
-    </div>
+      <div className="Header-backGround" />
+      <div className="Header AppFrame-content">
+        <SearchInput />
+        <Counter />
+      </div>
     </>
   )
 }

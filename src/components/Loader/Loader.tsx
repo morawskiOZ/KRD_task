@@ -15,7 +15,7 @@ const Loader = (): ReactElement => {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-  // Show fake progress to the user so he know something is happening
+  // Show fake progress to the user so she/he knows something is happening
   const increasePercentage = (): void => {
     if (percentage < 85) {
       const randomNumber = getRandomIntFromInterval(5, 10)
